@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+<meta charset="UTF-8">
+<title>Miracle Of ICT</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#000000,#1e3c72,#2a5298);
+  font-family:Arial;
+  color:white;
+}
+
+.card{
+  background:rgba(0,0,0,0.6);
+  padding:40px;
+  border-radius:20px;
+  width:400px;
+  box-shadow:0 0 40px #00ffcc;
+  text-align:center;
+}
+
+h1{
+  margin-bottom:20px;
+}
+
+input{
+  width:100%;
+  padding:10px;
+  margin-top:10px;
+  border-radius:6px;
+  border:none;
+}
+
+button{
+  margin-top:20px;
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:#00ffcc;
+  font-weight:bold;
+  cursor:pointer;
+  width:100%;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#00ccaa;
+  box-shadow:0 0 20px #00ffcc;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Login Miracle Of ICT</h1>
+
+<input type="text" id="name" placeholder="Student Name">
+
+<input type="text" id="district" placeholder="District">
+
+<input type="text" id="whatsapp" placeholder="Whatsapp Number">
+
+<button onclick="submitForm()">Submit</button>
+
+</div>
+
+<script>
+
+function submitForm(){
+
+let name = document.getElementById("name").value;
+let district = document.getElementById("district").value;
+let whatsapp = document.getElementById("whatsapp").value;
+
+if(name=="" || district=="" || whatsapp==""){
+alert("Please fill all fields");
+return;
+}
+
+localStorage.setItem("studentName", name);
+localStorage.setItem("studentDistrict", district);
+localStorage.setItem("studentWhatsapp", whatsapp);
+
+window.location.href="quiz.html";
+
+}
+
+</script>
+
+</body>
+</html>
